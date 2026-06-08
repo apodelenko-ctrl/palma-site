@@ -1,11 +1,10 @@
 /*
- * WEGC promo toast — discreet, premium, once per session.
- * Surfaces "current developer incentives" and routes interest to the chat
- * widget (-> Telegram). No fabricated numbers; copy stays compliant.
- * Set window.WEGC_PROMO before this script to override the copy, e.g.:
- *   window.WEGC_PROMO = { en:{title,text}, ru:{...}, zh:{...} };
+ * Promo toast — currently disabled (no active developer incentives to show).
  */
 (function () {
+  // DISABLED: no active offers to show yet (per request).
+  // Re-enable later by removing this early return.
+  return;
   if (window.__wegcPromo) return; window.__wegcPromo = true;
   try { if (sessionStorage.getItem('wegcPromoSeen')) return; } catch (e) {}
 
