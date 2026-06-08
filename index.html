@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="robots" content="noindex, nofollow"/>
+<meta name="robots" content="index, follow"/>
 <title>Пальма Проперти — недвижимость Пхукета за криптовалюту · USDT, USDC, BTC</title>
 <meta name="description" content="Пальма Проперти — квартиры и виллы на Пхукете с оплатой в криптовалюте. Принимаем USDT, USDC, BTC. Рассрочка 0% от застройщика, 0% комиссии покупателю, въезд по российскому паспорту без визы."/>
 <meta property="og:type" content="website"/>
@@ -12,10 +12,29 @@
 <meta property="og:url" content="https://palmaphuket.com/"/>
 <meta property="og:image" content="https://palmaphuket.com/images/the-modeva-exterior-4-1.jpg"/>
 <meta property="og:locale" content="ru_RU"/>
+<link rel="canonical" href="https://palmaphuket.com/"/>
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Пальма Проперти",
+  "alternateName": "Palma Property",
+  "url": "https://palmaphuket.com/",
+  "logo": "https://palmaphuket.com/images/favicon.svg",
+  "image": "https://palmaphuket.com/images/the-modeva-exterior-4-1.jpg",
+  "description": "«Пальма Проперти» — агентство недвижимости на Пхукете (Таиланд) с возможностью оплаты в криптовалюте: USDT, USDC, BTC. Прямые контракты с застройщиком, 0% комиссии покупателю, сопровождение сделки и юридическое заключение.",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Пхукет, Таиланд"
+  },
+  "knowsLanguage": "ru",
+  "knowsAbout": ["недвижимость Пхукета", "покупка недвижимости за криптовалюту", "USDT", "USDC", "BTC", "leasehold", "freehold"]
+}
+</script>
 <style>
 :root{
   --bg:#fff;
@@ -396,7 +415,7 @@ footer.f{background:#06080f;color:#94a3b8;padding:64px 0 28px;border-top:1px sol
 /* Leaflet map styling */
 .phuket-leaflet-map-wrap{position:relative;width:100%;height:100%;min-height:560px}
 #phuket-leaflet-map{font-family:'Inter',sans-serif}
-.wegc-pin .wegc-pin-dot{
+.palma-pin .palma-pin-dot{
   width:32px;height:32px;border-radius:50%;
   background:#2dd4bf;color:#0a0e1a;
   display:flex;align-items:center;justify-content:center;
@@ -405,15 +424,15 @@ footer.f{background:#06080f;color:#94a3b8;padding:64px 0 28px;border-top:1px sol
   box-shadow:0 0 0 4px rgba(214,179,112,.18),0 4px 14px rgba(0,0,0,.45);
   cursor:pointer;transition:transform .18s ease;
 }
-.wegc-pin:hover .wegc-pin-dot{transform:scale(1.12)}
-.wegc-tip{
+.palma-pin:hover .palma-pin-dot{transform:scale(1.12)}
+.palma-tip{
   background:rgba(10,14,26,.95)!important;color:#fff!important;
   border:1px solid rgba(214,179,112,.4)!important;
   border-radius:6px!important;padding:4px 10px!important;
   font-size:12px!important;font-weight:600!important;letter-spacing:.04em;
   box-shadow:0 4px 14px rgba(0,0,0,.4)!important;
 }
-.wegc-tip::before{display:none!important}
+.palma-tip::before{display:none!important}
 .leaflet-control-zoom a{
   background:rgba(10,14,26,.85)!important;color:#fff!important;
   border-color:rgba(255,255,255,.18)!important;
@@ -1380,7 +1399,7 @@ picture{display:contents}</style>
           </div>
         </div>
 
-        <form id="agencyForm" class="contact-form" novalidate action="javascript:void(0)" data-wegc-form="1" data-success-msg="Спасибо. Ваш запрос получен. Мы ответим в ближайшее время." data-error-msg="Не удалось отправить. Напишите напрямую на hello@palmaphuket.com." data-fallback-msg="Ваш почтовый клиент должен открыться с готовым сообщением. Если ничего не произошло — напишите напрямую на hello@palmaphuket.com.">
+        <form id="agencyForm" class="contact-form" novalidate action="javascript:void(0)" data-palma-form="1" data-success-msg="Спасибо. Ваш запрос получен. Мы ответим в ближайшее время." data-error-msg="Не удалось отправить. Напишите напрямую на hello@palmaphuket.com." data-fallback-msg="Ваш почтовый клиент должен открыться с готовым сообщением. Если ничего не произошло — напишите напрямую на hello@palmaphuket.com.">
 
           <div id="formMessage" class="cf-message"></div>
           <div class="cf-row">
@@ -1542,20 +1561,20 @@ document.addEventListener('DOMContentLoaded', function(){
     pins.forEach(function(p){
       var n=p[0], name=p[1], lat=p[2], lng=p[3], y=p[4];
       var icon = L.divIcon({
-        className: 'wegc-pin',
-        html: '<div class="wegc-pin-dot">'+n+'</div>',
+        className: 'palma-pin',
+        html: '<div class="palma-pin-dot">'+n+'</div>',
         iconSize: [32,32], iconAnchor:[16,16]
       });
       L.marker([lat,lng], {icon: icon})
         .addTo(map)
-        .bindTooltip(name+' · '+y, {permanent:false, direction:'top', offset:[0,-10], className:'wegc-tip'});
+        .bindTooltip(name+' · '+y, {permanent:false, direction:'top', offset:[0,-10], className:'palma-tip'});
     });
   }
   initMap();
 });
 </script>
 <script>
-/* WEGC form delivery — Formspree primary, mailto fallback */
+/* Palma form delivery — Formspree primary, mailto fallback */
 (function(){
   var ENDPOINT='https://formspree.io/f/xrbyywrr';
   function buildMailto(form){
@@ -1570,14 +1589,14 @@ document.addEventListener('DOMContentLoaded', function(){
     return 'mailto:hello@palmaphuket.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   }
   function bindForm(form){
-    if(form._wegcBound) return;
-    form._wegcBound=true;
+    if(form._palmaBound) return;
+    form._palmaBound=true;
     form.addEventListener('submit', async function(e){
       e.preventDefault();
       var fd = new FormData(form);
       var delivered = false;
       // 1) Telegram relay (Cloudflare Worker) — preferred if configured
-      var RELAY = (typeof window!=='undefined' && window.WEGC_RELAY) ? window.WEGC_RELAY : 'https://wegc-form-relay.wegc.workers.dev';
+      var RELAY = (typeof window!=='undefined' && window.PALMA_RELAY) ? window.PALMA_RELAY : 'https://wegc-form-relay.wegc.workers.dev';
       if(RELAY){
         try{
           var obj={}; fd.forEach(function(v,k){ if(k!=='_gotcha') obj[k]=v; });
@@ -1619,7 +1638,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
   function init(){
-    var forms = document.querySelectorAll('form[data-wegc-form="1"]');
+    var forms = document.querySelectorAll('form[data-palma-form="1"]');
     forms.forEach(bindForm);
     console.log('[Пальма Проперти] form handler bound to '+forms.length+' form(s)');
   }

@@ -4,7 +4,7 @@
  * No phone number exposed; self-contained (injects its own CSS + DOM).
  */
 (function () {
-  if (window.__wegcChat) return; window.__wegcChat = true;
+  if (window.__palmaChat) return; window.__palmaChat = true;
   var RELAY = 'https://wegc-form-relay.wegc.workers.dev';
 
   var lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
@@ -25,60 +25,60 @@
   }[lang];
 
   var css = '' +
-    '.wegc-chat-btn{position:fixed;right:20px;bottom:20px;z-index:99998;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:#0a0e1a;background:#d6b370;padding:13px 18px;border-radius:999px;box-shadow:0 10px 30px -8px rgba(0,0,0,.5);transition:transform .15s ease,background .15s ease}' +
-    '.wegc-chat-btn:hover{background:#c9a45f;transform:translateY(-1px)}' +
-    '.wegc-chat-btn svg{display:block}' +
-    '.wegc-chat-panel{position:fixed;right:20px;bottom:78px;width:344px;max-width:calc(100vw - 32px);z-index:99999;background:#0a0e1a;border:1px solid #1f2937;border-radius:16px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);overflow:hidden;display:none;font-family:inherit}' +
-    '.wegc-chat-panel.open{display:block}' +
-    '.wegc-chat-hd{background:linear-gradient(180deg,#0d1424,#06080f);padding:18px 20px;position:relative}' +
-    '.wegc-chat-hd h4{margin:0;color:#fff;font-size:16px;font-weight:600;letter-spacing:-.01em}' +
-    '.wegc-chat-hd p{margin:6px 0 0;color:rgba(255,255,255,.66);font-size:12.5px;line-height:1.5}' +
-    '.wegc-chat-x{position:absolute;top:14px;right:14px;width:26px;height:26px;border:none;background:rgba(255,255,255,.08);color:#fff;border-radius:50%;cursor:pointer;font-size:16px;line-height:1}' +
-    '.wegc-chat-x:hover{background:rgba(255,255,255,.18)}' +
-    '.wegc-chat-body{padding:16px 20px 20px;display:flex;flex-direction:column;gap:10px}' +
-    '.wegc-chat-body input,.wegc-chat-body textarea{font-family:inherit;font-size:13.5px;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:10px 12px;border-radius:8px;outline:none;width:100%}' +
-    '.wegc-chat-body input:focus,.wegc-chat-body textarea:focus{border-color:#d6b370}' +
-    '.wegc-chat-body input::placeholder,.wegc-chat-body textarea::placeholder{color:rgba(255,255,255,.4)}' +
-    '.wegc-chat-body textarea{resize:vertical;min-height:74px}' +
-    '.wegc-chat-send{background:#d6b370;color:#0a0e1a;border:none;font-weight:700;font-size:14px;padding:12px;border-radius:8px;cursor:pointer;font-family:inherit;transition:background .15s ease}' +
-    '.wegc-chat-send:hover{background:#c9a45f}' +
-    '.wegc-chat-send:disabled{opacity:.6;cursor:default}' +
-    '.wegc-chat-note{color:rgba(255,255,255,.78);font-size:13px;line-height:1.55;padding:4px 0}' +
-    '.wegc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}' +
-    '@media(max-width:640px){.wegc-chat-panel{right:12px;left:12px;width:auto;bottom:74px}.wegc-chat-btn{right:14px;bottom:14px}}';
+    '.palma-chat-btn{position:fixed;right:20px;bottom:20px;z-index:99998;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:#0a0e1a;background:#d6b370;padding:13px 18px;border-radius:999px;box-shadow:0 10px 30px -8px rgba(0,0,0,.5);transition:transform .15s ease,background .15s ease}' +
+    '.palma-chat-btn:hover{background:#c9a45f;transform:translateY(-1px)}' +
+    '.palma-chat-btn svg{display:block}' +
+    '.palma-chat-panel{position:fixed;right:20px;bottom:78px;width:344px;max-width:calc(100vw - 32px);z-index:99999;background:#0a0e1a;border:1px solid #1f2937;border-radius:16px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);overflow:hidden;display:none;font-family:inherit}' +
+    '.palma-chat-panel.open{display:block}' +
+    '.palma-chat-hd{background:linear-gradient(180deg,#0d1424,#06080f);padding:18px 20px;position:relative}' +
+    '.palma-chat-hd h4{margin:0;color:#fff;font-size:16px;font-weight:600;letter-spacing:-.01em}' +
+    '.palma-chat-hd p{margin:6px 0 0;color:rgba(255,255,255,.66);font-size:12.5px;line-height:1.5}' +
+    '.palma-chat-x{position:absolute;top:14px;right:14px;width:26px;height:26px;border:none;background:rgba(255,255,255,.08);color:#fff;border-radius:50%;cursor:pointer;font-size:16px;line-height:1}' +
+    '.palma-chat-x:hover{background:rgba(255,255,255,.18)}' +
+    '.palma-chat-body{padding:16px 20px 20px;display:flex;flex-direction:column;gap:10px}' +
+    '.palma-chat-body input,.palma-chat-body textarea{font-family:inherit;font-size:13.5px;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:10px 12px;border-radius:8px;outline:none;width:100%}' +
+    '.palma-chat-body input:focus,.palma-chat-body textarea:focus{border-color:#d6b370}' +
+    '.palma-chat-body input::placeholder,.palma-chat-body textarea::placeholder{color:rgba(255,255,255,.4)}' +
+    '.palma-chat-body textarea{resize:vertical;min-height:74px}' +
+    '.palma-chat-send{background:#d6b370;color:#0a0e1a;border:none;font-weight:700;font-size:14px;padding:12px;border-radius:8px;cursor:pointer;font-family:inherit;transition:background .15s ease}' +
+    '.palma-chat-send:hover{background:#c9a45f}' +
+    '.palma-chat-send:disabled{opacity:.6;cursor:default}' +
+    '.palma-chat-note{color:rgba(255,255,255,.78);font-size:13px;line-height:1.55;padding:4px 0}' +
+    '.palma-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}' +
+    '@media(max-width:640px){.palma-chat-panel{right:12px;left:12px;width:auto;bottom:74px}.palma-chat-btn{right:14px;bottom:14px}}';
 
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
 
   var btn = document.createElement('button');
-  btn.className = 'wegc-chat-btn'; btn.type = 'button'; btn.setAttribute('aria-label', T.title);
+  btn.className = 'palma-chat-btn'; btn.type = 'button'; btn.setAttribute('aria-label', T.title);
   btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span>' + T.btn + '</span>';
 
   var panel = document.createElement('div');
-  panel.className = 'wegc-chat-panel'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', T.title);
+  panel.className = 'palma-chat-panel'; panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', T.title);
   panel.innerHTML =
-    '<div class="wegc-chat-hd"><button class="wegc-chat-x" type="button" aria-label="Close">\u00d7</button><h4>' + T.title + '</h4><p>' + T.sub + '</p></div>' +
-    '<div class="wegc-chat-body">' +
-      '<input class="wegc-hp" type="text" tabindex="-1" autocomplete="off" id="wegc-c-gotcha"/>' +
-      '<input type="text" id="wegc-c-name" placeholder="' + T.name + '" autocomplete="name"/>' +
-      '<input type="text" id="wegc-c-contact" placeholder="' + T.contact + '" autocomplete="email"/>' +
-      '<textarea id="wegc-c-msg" placeholder="' + T.msg + '"></textarea>' +
-      '<button class="wegc-chat-send" type="button" id="wegc-c-send">' + T.send + '</button>' +
+    '<div class="palma-chat-hd"><button class="palma-chat-x" type="button" aria-label="Close">\u00d7</button><h4>' + T.title + '</h4><p>' + T.sub + '</p></div>' +
+    '<div class="palma-chat-body">' +
+      '<input class="palma-hp" type="text" tabindex="-1" autocomplete="off" id="palma-c-gotcha"/>' +
+      '<input type="text" id="palma-c-name" placeholder="' + T.name + '" autocomplete="name"/>' +
+      '<input type="text" id="palma-c-contact" placeholder="' + T.contact + '" autocomplete="email"/>' +
+      '<textarea id="palma-c-msg" placeholder="' + T.msg + '"></textarea>' +
+      '<button class="palma-chat-send" type="button" id="palma-c-send">' + T.send + '</button>' +
     '</div>';
 
   function mount() {
     document.body.appendChild(btn); document.body.appendChild(panel);
-    var x = panel.querySelector('.wegc-chat-x');
-    var send = panel.querySelector('#wegc-c-send');
-    btn.addEventListener('click', function () { panel.classList.toggle('open'); if (panel.classList.contains('open')) panel.querySelector('#wegc-c-msg').focus(); });
+    var x = panel.querySelector('.palma-chat-x');
+    var send = panel.querySelector('#palma-c-send');
+    btn.addEventListener('click', function () { panel.classList.toggle('open'); if (panel.classList.contains('open')) panel.querySelector('#palma-c-msg').focus(); });
     x.addEventListener('click', function () { panel.classList.remove('open'); });
     send.addEventListener('click', async function () {
-      if (panel.querySelector('#wegc-c-gotcha').value) { done(); return; }
-      var msg = panel.querySelector('#wegc-c-msg').value.trim();
-      if (!msg) { panel.querySelector('#wegc-c-msg').focus(); return; }
+      if (panel.querySelector('#palma-c-gotcha').value) { done(); return; }
+      var msg = panel.querySelector('#palma-c-msg').value.trim();
+      if (!msg) { panel.querySelector('#palma-c-msg').focus(); return; }
       send.disabled = true;
       var payload = {
-        name: panel.querySelector('#wegc-c-name').value.trim(),
-        contact: panel.querySelector('#wegc-c-contact').value.trim(),
+        name: panel.querySelector('#palma-c-name').value.trim(),
+        contact: panel.querySelector('#palma-c-contact').value.trim(),
         message: msg, _source: 'Online chat', _page: location.pathname, _lang: lang
       };
       var ok = false;
@@ -92,7 +92,7 @@
     });
     function done() { showNote(T.ok); }
     function showNote(text) {
-      panel.querySelector('.wegc-chat-body').innerHTML = '<p class="wegc-chat-note">' + text + '</p>';
+      panel.querySelector('.palma-chat-body').innerHTML = '<p class="palma-chat-note">' + text + '</p>';
     }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();

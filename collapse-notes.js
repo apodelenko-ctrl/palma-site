@@ -1,20 +1,20 @@
 /*
- * WEGC collapsible disclaimers.
+ * Palma collapsible disclaimers.
  * Long legal / disclaimer notes collapse to a single line and expand on click.
  * Keeps pages airy without hiding required legal text.
  */
 (function () {
-  if (window.__wegcNotes) return; window.__wegcNotes = true;
+  if (window.__palmaNotes) return; window.__palmaNotes = true;
 
   var SEL = '.why-note,.mech-disclaimer,.f-disclaimer,.f-disc,.cases-note,.settle-note,.note,.disclaimer,.hero-foot-note';
 
   var css = '' +
-    '.wegc-note{cursor:pointer;position:relative;padding-right:26px}' +
-    '.wegc-note .wegc-note-in{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;line-clamp:1;overflow:hidden}' +
-    '.wegc-note.is-open .wegc-note-in{-webkit-line-clamp:9999;line-clamp:9999;overflow:visible}' +
-    '.wegc-note .wegc-note-tg{position:absolute;right:6px;top:6px;color:#a08156;font-size:12px;line-height:1;user-select:none;pointer-events:none;transition:transform .2s ease}' +
-    '.wegc-note.is-open .wegc-note-tg{transform:rotate(180deg)}' +
-    '.wegc-note:focus-visible{outline:2px solid rgba(160,129,86,.5);outline-offset:2px}';
+    '.palma-note{cursor:pointer;position:relative;padding-right:26px}' +
+    '.palma-note .palma-note-in{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;line-clamp:1;overflow:hidden}' +
+    '.palma-note.is-open .palma-note-in{-webkit-line-clamp:9999;line-clamp:9999;overflow:visible}' +
+    '.palma-note .palma-note-tg{position:absolute;right:6px;top:6px;color:#a08156;font-size:12px;line-height:1;user-select:none;pointer-events:none;transition:transform .2s ease}' +
+    '.palma-note.is-open .palma-note-tg{transform:rotate(180deg)}' +
+    '.palma-note:focus-visible{outline:2px solid rgba(160,129,86,.5);outline-offset:2px}';
 
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
@@ -31,7 +31,7 @@
     });
 
     nodes.forEach(function (el) {
-      if (el.getAttribute('data-wegc-note')) return;
+      if (el.getAttribute('data-palma-note')) return;
 
       // measure natural height BEFORE clamping
       var cs = getComputedStyle(el);
@@ -40,14 +40,14 @@
       if (el.clientHeight <= lh * 1.6 + pad) return; // single line — leave it
 
       var inner = document.createElement('span');
-      inner.className = 'wegc-note-in';
+      inner.className = 'palma-note-in';
       while (el.firstChild) inner.appendChild(el.firstChild);
       el.appendChild(inner);
 
-      el.setAttribute('data-wegc-note', '1');
-      el.classList.add('wegc-note');
+      el.setAttribute('data-palma-note', '1');
+      el.classList.add('palma-note');
       var tg = document.createElement('span');
-      tg.className = 'wegc-note-tg'; tg.textContent = '\u25be';
+      tg.className = 'palma-note-tg'; tg.textContent = '\u25be';
       el.appendChild(tg);
 
       el.setAttribute('role', 'button');
