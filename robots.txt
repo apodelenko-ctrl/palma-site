@@ -1,4 +1,4 @@
-# robots.txt — palmaphuket.com («Пальма Проперти»)
+# robots.txt — palmaphuket.com («PALMA PROPERTY»)
 User-agent: *
 Allow: /
 
