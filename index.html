@@ -161,6 +161,12 @@ section.s.dark p{color:rgba(255,255,255,.74)}
 .cat-tags{position:absolute;top:14px;left:14px;display:flex;gap:6px;flex-wrap:wrap}
 .cat-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(15,23,42,.78);color:#fff;padding:5px 10px;border-radius:3px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .cat-tag.gold{background:rgba(13,148,136,.92)}
+.cat-cover .card-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease;z-index:1;pointer-events:none}
+.cat-cover .card-vid.playing{opacity:1}
+.cat-video-badge{position:absolute;top:14px;right:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#053b34;background:rgba(45,212,191,.94);box-shadow:0 6px 16px -6px rgba(13,148,136,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none}
+.cat-video-badge .vb-ico{font-size:8px;line-height:1;transform:translateY(.5px)}
+.cat-card:hover .cat-video-badge{background:#2dd4bf}
+@media (max-width:640px){.cat-video-badge{top:10px;right:10px;font-size:10px;padding:5px 9px;letter-spacing:.05em}}
 .cat-body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
 .cat-body h3{font-size:1.4rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
 .cat-developer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
@@ -697,7 +703,7 @@ picture{display:contents}</style>
     <div class="cat-grid">
       <!-- FEATURED: CASA DE MONTE -->
       <article class="cat-card" data-cats="villa leasehold">
-        <a class="cat-cover" href="/palma-casa-de-monte.html" aria-label="Casa de Monte"><picture><source srcset="/images/projects/casademonte-hero.webp" type="image/webp"><img src="/images/projects/casademonte-hero.jpg" width="1920" height="797" alt="Casa de Monte villas" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-casa-de-monte.html" aria-label="Casa de Monte"><picture><source srcset="/images/projects/casademonte-hero.webp" type="image/webp"><img src="/images/projects/casademonte-hero.jpg" width="1920" height="797" alt="Casa de Monte villas" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/casa-de-monte/dossier/video/casa-de-monte-tour-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/casa-de-monte/dossier/video/casa-de-monte-tour.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Хит</span>
             <span class="cat-tag">Вилла</span>
@@ -722,7 +728,7 @@ picture{display:contents}</style>
 
       <!-- NEW: The Title Vivana — Камала -->
       <article class="cat-card" data-cats="kamala freehold">
-        <a class="cat-cover" href="/palma-the-title-vivana.html" aria-label="The Title Vivana — Камала"><picture><source srcset="/images/projects/vivana/facade.webp" type="image/webp"><img src="/images/projects/vivana/facade.jpg" width="1600" height="675" alt="The Title Vivana — Камала" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-title-vivana.html" aria-label="The Title Vivana — Камала"><picture><source srcset="/images/projects/vivana/facade.webp" type="image/webp"><img src="/images/projects/vivana/facade.jpg" width="1600" height="675" alt="The Title Vivana — Камала" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-title-vivana/dossier/video/the-title-vivana-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-title-vivana/dossier/video/the-title-vivana-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags"><span class="cat-tag gold">Новинка</span><span class="cat-tag">Кондо</span><span class="cat-tag">Камала</span></div>
         </a>
         <div class="cat-body">
@@ -739,7 +745,7 @@ picture{display:contents}</style>
 
       <!-- NEW: The Title Sierra — Банг Тао -->
       <article class="cat-card" data-cats="bangtao freehold">
-        <a class="cat-cover" href="/palma-the-title-sierra.html" aria-label="The Title Sierra — Банг Тао"><picture><source srcset="/images/projects/sierra/facade.webp" type="image/webp"><img src="/images/projects/sierra/facade.jpg" width="1600" height="756" alt="The Title Sierra — Банг Тао" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-title-sierra.html" aria-label="The Title Sierra — Банг Тао"><picture><source srcset="/images/projects/sierra/facade.webp" type="image/webp"><img src="/images/projects/sierra/facade.jpg" width="1600" height="756" alt="The Title Sierra — Банг Тао" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-title-sierra/dossier/video/the-title-sierra-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-title-sierra/dossier/video/the-title-sierra-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags"><span class="cat-tag gold">Новинка</span><span class="cat-tag">Кондо</span><span class="cat-tag">Банг Тао</span></div>
         </a>
         <div class="cat-body">
@@ -756,7 +762,7 @@ picture{display:contents}</style>
 
       <!-- NEW: The Olive — Най Янг -->
       <article class="cat-card" data-cats="naiyang freehold">
-        <a class="cat-cover" href="/palma-the-olive.html" aria-label="The Olive — Най Янг"><picture><source srcset="/images/projects/olive/facade.webp" type="image/webp"><img src="/images/projects/olive/facade.jpg" width="1600" height="651" alt="The Olive — Най Янг" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-olive.html" aria-label="The Olive — Най Янг"><picture><source srcset="/images/projects/olive/facade.webp" type="image/webp"><img src="/images/projects/olive/facade.jpg" width="1600" height="651" alt="The Olive — Най Янг" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-olive/dossier/video/the-olive-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-olive/dossier/video/the-olive-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags"><span class="cat-tag gold">Новинка</span><span class="cat-tag">Кондо</span><span class="cat-tag">Най Янг</span></div>
         </a>
         <div class="cat-body">
@@ -773,8 +779,8 @@ picture{display:contents}</style>
 
       <!-- 1. THE MODEVA -->
       <article class="cat-card" data-cats="bangtao leasehold">
-        <a class="cat-cover" href="/palma-the-modeva.html" aria-label="Открыть паспорт The Modeva">
-          <picture><source srcset="/images/the-modeva-exterior-2-1-1280x665.webp" type="image/webp"><img src="/images/the-modeva-exterior-2-1-1280x665.jpg" width="1280" height="665" alt="The Modeva, экстерьер, Bang Tao, Пхукет" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-modeva.html" aria-label="Открыть паспорт The Modeva">
+          <picture><source srcset="/images/the-modeva-exterior-2-1-1280x665.webp" type="image/webp"><img src="/images/the-modeva-exterior-2-1-1280x665.jpg" width="1280" height="665" alt="The Modeva, экстерьер, Bang Tao, Пхукет" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-modeva/dossier/video/the-modeva-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-modeva/dossier/video/the-modeva-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Leasehold</span>
             <span class="cat-tag">Bang Tao</span>
@@ -823,8 +829,8 @@ picture{display:contents}</style>
 
       <!-- 3. THE TITLE KATABELLO -->
       <article class="cat-card" data-cats="kata leasehold">
-        <a class="cat-cover" href="/palma-the-title-katabello.html" aria-label="Открыть паспорт The Title Katabello">
-          <picture><source srcset="/images/the-title-katabello-exterior-2.webp" type="image/webp"><img src="/images/the-title-katabello-exterior-2.jpg" width="1194" height="825" alt="The Title Katabello, экстерьер, Kata-Karon, Пхукет" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-title-katabello.html" aria-label="Открыть паспорт The Title Katabello">
+          <picture><source srcset="/images/the-title-katabello-exterior-2.webp" type="image/webp"><img src="/images/the-title-katabello-exterior-2.jpg" width="1194" height="825" alt="The Title Katabello, экстерьер, Kata-Karon, Пхукет" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-title-katabello/dossier/video/the-title-katabello-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-title-katabello/dossier/video/the-title-katabello-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Leasehold</span>
             <span class="cat-tag">Kata · Karon</span>
@@ -848,8 +854,8 @@ picture{display:contents}</style>
 
       <!-- 4. THE TITLE ADORA -->
       <article class="cat-card" data-cats="rawai leasehold">
-        <a class="cat-cover" href="/palma-the-title-adora.html" aria-label="Открыть паспорт The Title Adora">
-          <picture><source srcset="/images/the-title-adora-exterior-8.webp" type="image/webp"><img src="/images/the-title-adora-exterior-8.jpg" width="1248" height="685" alt="The Title Adora, экстерьер, Rawai, Пхукет" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-title-adora.html" aria-label="Открыть паспорт The Title Adora">
+          <picture><source srcset="/images/the-title-adora-exterior-8.webp" type="image/webp"><img src="/images/the-title-adora-exterior-8.jpg" width="1248" height="685" alt="The Title Adora, экстерьер, Rawai, Пхукет" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-title-adora/dossier/video/the-title-adora-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-title-adora/dossier/video/the-title-adora-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Leasehold</span>
             <span class="cat-tag">Rawai</span>
@@ -873,8 +879,8 @@ picture{display:contents}</style>
 
       <!-- 5. TITLE VIVI -->
       <article class="cat-card" data-cats="bangtao leasehold">
-        <a class="cat-cover" href="/palma-title-vivi.html" aria-label="Открыть паспорт The Title Vivi">
-          <picture><source srcset="/images/title-vivi-exterior-2-1280x716.webp" type="image/webp"><img src="/images/title-vivi-exterior-2-1280x716.jpg" width="1280" height="716" alt="The Title Vivi, экстерьер, Банг Тао, Пхукет" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-title-vivi.html" aria-label="Открыть паспорт The Title Vivi">
+          <picture><source srcset="/images/title-vivi-exterior-2-1280x716.webp" type="image/webp"><img src="/images/title-vivi-exterior-2-1280x716.jpg" width="1280" height="716" alt="The Title Vivi, экстерьер, Банг Тао, Пхукет" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/title-vivi/dossier/video/title-vivi-tour-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/title-vivi/dossier/video/title-vivi-tour.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Leasehold</span>
             <span class="cat-tag">Bang Tao</span>
@@ -898,7 +904,7 @@ picture{display:contents}</style>
 
       <!-- 6. THE TITLE BALCONY -->
       <article class="cat-card" data-cats="naiyang leasehold">
-        <a class="cat-cover" href="/palma-the-title-balcony.html" aria-label="The Title Balcony"><picture><source srcset="/images/projects/balcony-hero.webp" type="image/webp"><img src="/images/projects/balcony-hero.jpg" width="1536" height="1024" alt="The Title Balcony, Nai Yang" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-title-balcony.html" aria-label="The Title Balcony"><picture><source srcset="/images/projects/balcony-hero.webp" type="image/webp"><img src="/images/projects/balcony-hero.jpg" width="1536" height="1024" alt="The Title Balcony, Nai Yang" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-title-balcony/dossier/video/the-title-balcony-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-title-balcony/dossier/video/the-title-balcony-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Leasehold</span>
             <span class="cat-tag">Nai Yang</span>
@@ -922,7 +928,7 @@ picture{display:contents}</style>
 
       <!-- 7. THE TITLE BIANCANA -->
       <article class="cat-card" data-cats="surin leasehold">
-        <a class="cat-cover" href="/palma-the-title-biancana.html" aria-label="The Title Biancana"><picture><source srcset="/images/projects/biancana-hero.webp" type="image/webp"><img src="/images/projects/biancana-hero.jpg" width="1536" height="1024" alt="The Title Biancana, Surin" loading="lazy" decoding="async"/></picture>
+        <a class="cat-cover has-video" href="/palma-the-title-biancana.html" aria-label="The Title Biancana"><picture><source srcset="/images/projects/biancana-hero.webp" type="image/webp"><img src="/images/projects/biancana-hero.jpg" width="1536" height="1024" alt="The Title Biancana, Surin" loading="lazy" decoding="async"/></picture><video class="card-vid" poster="/images/projects/the-title-biancana/dossier/video/the-title-biancana-tour-1-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"><source src="/images/projects/the-title-biancana/dossier/video/the-title-biancana-tour-1.mp4" type="video/mp4"></video><span class="cat-video-badge"><span class="vb-ico">▶</span>Видео-тур</span>
           <div class="cat-tags">
             <span class="cat-tag gold">Leasehold</span>
             <span class="cat-tag">Surin</span>
@@ -1629,6 +1635,29 @@ document.addEventListener('DOMContentLoaded', function(){
     layers[nxt].classList.add('on');
     cur=nxt;
   },6500);
+})();
+</script>
+<script>
+/* Card video tour: desktop-hover muted/looped inline preview. No autoplay; skipped on touch, small screens, and reduced-motion. */
+(function(){
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!fine||reduce) return;
+  document.querySelectorAll('.cat-cover.has-video').forEach(function(a){
+    var v=a.querySelector('video.card-vid');
+    if(!v) return;
+    a.addEventListener('mouseenter',function(){
+      if(window.innerWidth<1024) return;
+      var p=v.play();
+      if(p&&p.then){p.then(function(){v.classList.add('playing');}).catch(function(){});}
+      else{v.classList.add('playing');}
+    });
+    a.addEventListener('mouseleave',function(){
+      v.classList.remove('playing');
+      v.pause();
+      try{v.currentTime=0;}catch(e){}
+    });
+  });
 })();
 </script>
 <script src="/collapse-notes.js" defer></script>
